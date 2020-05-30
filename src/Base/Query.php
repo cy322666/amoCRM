@@ -4,7 +4,7 @@
 namespace cy322666\amoCRM\Base;
 
 
-class Query
+class Query extends Model
 {
 
     function post()

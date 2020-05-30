@@ -3,6 +3,7 @@
 
 namespace cy322666\amoCRM\Models;
 
+use cy322666\amoCRM;
 
 class Lead
 {
@@ -19,6 +20,7 @@ class Lead
 
     function __construct()
     {
+        echo __NAMESPACE__;
         //echo 'lead';
     }
 
