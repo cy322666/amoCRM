@@ -10,12 +10,33 @@ class Auth
 
     private
         $attributes = [
-            'subdomain' => '',
+            'login' => '',
             'hash' => ''
     ];
 
-    public function getAuth()
+    private $authorization = false;
+
+    public function __construct()
     {
 
+    }
+
+    private function accessInit($accessArray)
+    {
+        if($accessArray) {
+            $this->attributes['login'] = $accessArray['login'];
+            $this->attributes['hash'] = $accessArray['hash'];
+        }
+    }
+
+    public function auth($accessArray)
+    {
+        $this->accessInit($accessArray);
+
+    }
+
+    public function getAuth()
+    {
+        return $this->authorization;
     }
 }

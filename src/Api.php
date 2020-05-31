@@ -24,8 +24,9 @@ class Api
 {
     private
         $attributes = [
+            'Auth' => '',
             'Account' => '',
-            'Lead' => '',
+            'Lead' => ''
 //            'contacts' => ''
         ];
 
@@ -36,22 +37,48 @@ class Api
         echo '=============';
         echo 'Мы в API '.__CLASS__.' '.__NAMESPACE__;
 
+        $this->initModels();
+
+        //$this->Model = new Base\Model();
+    }
+
+    private function initModels()
+    {
         foreach ($this->attributes as $key => $attribute) {
             $className = __NAMESPACE__.'\Models\\'.$key;
 
             $this->attributes[$key] = new $className;
         }
-        $this->Model = new Base\Model();
     }
 
-    public function Auth($path)
+    public function getAuth()
     {
-        $fileAccess = $path.'php';
-        if(file_exists($fileAccess)) {
-            $access = require_once $path.'php';
-
-        }
+        return $this->attributes['Auth'];
     }
+
+    public function getAccount()
+    {
+        return $this->attributes['Account'];
+    }
+
+    public function getLead()
+    {
+        return $this->attributes['Lead'];
+    }
+
+    public function getContact()
+    {
+        return $this->attributes['Contact'];
+    }
+
+//    public function Auth($path)
+//    {
+//        $fileAccess = $path.'php';
+//        if(file_exists($fileAccess)) {
+//            $access = require_once $path.'php';
+//
+//        }
+//    }
 }
 
 
