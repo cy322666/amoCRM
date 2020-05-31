@@ -1,13 +1,19 @@
 <?php
-
-
 namespace cy322666\amoCRM\Base;
+//use cy322666\amoCRM;
 
-require_once '/Api.php';
+//use cy322666\amoCRM;
+
+echo "==============";
+echo __CLASS__.' '.__NAMESPACE__;
 
 
-class Model extends Api
+class Model
 {
+    public function __construct()
+    {
+        echo 'Подключили Model';
 
+    }
 
 }
