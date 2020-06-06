@@ -3,7 +3,7 @@
 
 namespace cy322666\amoCRM\Models;
 
-use cy322666\amoCRM\Api;
+use cy322666\amoCRM\Base\Curl as Curl;
 
 class Account
 {
@@ -11,6 +11,11 @@ class Account
 
     public function __construct()
     {
-        echo 'init Acc';
+        $a = Curl::Query($this->url, '');
+        var_dump($a);
+    }
+    public function getInfo()
+    {
+
     }
 }
